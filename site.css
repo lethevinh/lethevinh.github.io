@@ -419,3 +419,39 @@ section { padding: 64px 0 8px; }
   content: "▸"; position: absolute; left: 0; top: 1px;
   font-family: var(--mono); font-size: 12px; color: var(--pencil);
 }
+
+/* ---- video embed — FIELD DRAWING additions (scoped to .vid*) ---- */
+.vid {
+  position: relative; aspect-ratio: 16 / 9;
+  background: var(--paper-2); border: 1px solid var(--ink);
+  overflow: hidden;
+}
+.vid > iframe,
+.vid > video {
+  position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+}
+.vid > video {
+  display: block; background: var(--ink);
+}
+.vid .vidposter {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; display: block; cursor: pointer;
+}
+.vid .vidplay {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  font-family: var(--mono); font-size: 12.5px; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase; white-space: nowrap;
+  padding: 12px 22px; color: var(--pencil); background: var(--paper);
+  border: 1px solid var(--pencil); box-shadow: 3px 3px 0 var(--pencil);
+  cursor: pointer;
+}
+.vid[data-vid]:hover .vidplay,
+.vid[data-vid]:focus-visible .vidplay {
+  transform: translate(calc(-50% - 1px), calc(-50% - 1px));
+  box-shadow: 4px 4px 0 var(--pencil);
+}
+.vid .viddur {
+  position: absolute; right: 10px; bottom: 10px;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .06em;
+  background: var(--ink); color: var(--paper); padding: 2px 8px;
+}

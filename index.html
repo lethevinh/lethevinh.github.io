@@ -185,6 +185,37 @@
           <p style="margin-top:16px"><a href="https://github.com/lethevinh/automation-workflows/blob/main/docs/case-studies/client-report-generator.md">FULL CASE STUDY →</a></p>
         </div>
       </div>
+
+      <div class="callout" style="margin-top:64px">
+        <span class="no">S-02b</span>
+        <h2>Promise Ledger — watch the run</h2>
+        <span class="note">FIG. 2 · VIDEO · 0:56</span>
+      </div>
+      <div class="figure">
+        <div class="imgbox">
+          <div class="vid">
+            <video src="assets/video/promise-ledger-demo.mp4"
+                   poster="assets/poster.png"
+                   controls preload="metadata" playsinline></video>
+          </div>
+          <div class="figcap">FIG. 2 — the 60-node run, end to end. Drawn from the
+            actual workflow export — demo lane, zero credentials. The chase
+            draft waits in Chase-Queue until a human approves it.</div>
+        </div>
+        <div class="notes">
+          <h3>Field notes</h3>
+          <p>Reads inbound email, extracts commitments with an AI step, and
+            writes every promise to a ledger — verbatim plus due date. When one
+            ages past its date, the AI drafts a polite chase and stops.</p>
+          <ul>
+            <li>Every chase draft waits for human approval — nothing sends on its own</li>
+            <li>Daily 08:00 sweep re-scores the ledger into one digest</li>
+            <li>19/19 credentialed nodes retry on fail; an error lane emails the owner</li>
+            <li>Demo lane ships in the export — press Test, zero credentials</li>
+          </ul>
+          <p style="margin-top:16px"><a href="https://github.com/lethevinh/automation-workflows/tree/main/n8n/promise-ledger">OPEN THE WORKFLOW →</a></p>
+        </div>
+      </div>
     </div>
   </section>
 
